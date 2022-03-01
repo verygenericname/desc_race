@@ -691,7 +691,7 @@ void early_kwrite64(int sid, int rwid, uint64_t addr, uint64_t value){
 }
 
 
-void yeet_ios(){
+void main(){
     
     int rwid = -1;
     for (int i = 0; i < lol_cnt; i++){
