@@ -1,5 +1,10 @@
-#ifndef IOKIT_H
-#define IOKIT_H
+//
+//  iokit.h
+//  iomfb_poc
+//
+
+#ifndef iokit_h
+#define iokit_h
 
 #include <stdint.h>
 #include <mach/mach.h>
@@ -17,16 +22,6 @@ typedef io_object_t io_iterator_t;
 enum
 {
     kIOCFSerializeToBinary          = 0x00000001U,
-};
-
-enum
-{
-    kIOClassNameOverrideNone        = 0x00000001U,
-};
-
-enum
-{
-    kIOMapAnywhere                  = 0x00000001U,
 };
 
 enum
@@ -65,14 +60,11 @@ kern_return_t IOObjectRelease(io_object_t object);
 boolean_t IOObjectConformsTo(io_object_t object, const io_name_t name);
 uint32_t IOObjectGetKernelRetainCount(io_object_t object);
 kern_return_t IOObjectGetClass(io_object_t object, io_name_t name);
-kern_return_t _IOObjectGetClass(io_object_t object, uint64_t options, io_name_t name);
 CFStringRef IOObjectCopyClass(io_object_t object);
-CFStringRef _IOObjectCopyClass(io_object_t object, uint64_t options);
 CFStringRef IOObjectCopySuperclassForClass(CFStringRef name);
 CFStringRef IOObjectCopyBundleIdentifierForClass(CFStringRef name);
 
 io_registry_entry_t IORegistryGetRootEntry(mach_port_t master);
-io_registry_entry_t IORegistryEntryFromPath(mach_port_t master, const io_string_t path);
 kern_return_t IORegistryEntryGetName(io_registry_entry_t entry, io_name_t name);
 kern_return_t IORegistryEntryGetRegistryEntryID(io_registry_entry_t entry, uint64_t *entryID);
 kern_return_t IORegistryEntryGetPath(io_registry_entry_t entry, const io_name_t plane, io_string_t path);
@@ -95,7 +87,6 @@ io_service_t IOServiceGetMatchingService(mach_port_t master, CFDictionaryRef mat
 kern_return_t IOServiceGetMatchingServices(mach_port_t master, CFDictionaryRef matching CF_RELEASES_ARGUMENT, io_iterator_t *it);
 kern_return_t _IOServiceGetAuthorizationID(io_service_t service, uint64_t *authID);
 kern_return_t _IOServiceSetAuthorizationID(io_service_t service, uint64_t authID);
-kern_return_t IOServiceGetBusyStateAndTime(io_service_t service, uint64_t *state, uint32_t *busyState, uint64_t *busyTime);
 kern_return_t IOServiceOpen(io_service_t service, task_t task, uint32_t type, io_connect_t *client);
 kern_return_t IOServiceClose(io_connect_t client);
 kern_return_t IOCloseConnection(io_connect_t client);
@@ -115,4 +106,6 @@ kern_return_t IOConnectCallAsyncScalarMethod(io_connect_t client, uint32_t selec
 kern_return_t IOConnectCallAsyncStructMethod(io_connect_t client, uint32_t selector, mach_port_t wake_port, uint64_t *ref, uint32_t refCnt, const void *inStruct, size_t inStructCnt, void *outStruct, size_t *outStructCnt);
 kern_return_t IOConnectTrap6(io_connect_t client, uint32_t index, uintptr_t a, uintptr_t b, uintptr_t c, uintptr_t d, uintptr_t e, uintptr_t f);
 
-#endif
+
+
+#endif /* iokit_h */
