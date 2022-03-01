@@ -33,8 +33,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           ls
-          make brix.bin
-          make button_helper.bin
+          xrun -sdk iphoneos gcc 
           ls
           
           
