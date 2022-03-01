@@ -7,7 +7,7 @@
 
 #include "spray_stuff.h"
 #include "iokit.h"
-#include "IOKit/IOTypes.h"
+#include "IOTypes.h"
 
 // Thanks to Justin for the OSData code https://github.com/jsherman212/iomfb-exploit
 // Thanks to pattern-f for pipe spray and IOSurface API code https://github.com/pattern-f/TQ-pre-jailbreak
