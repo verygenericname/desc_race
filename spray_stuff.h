@@ -10,6 +10,8 @@
 
 #include <stdio.h>
 
+#include <stdint.h>
+
 void iosurface_justin(uint32_t sz);
 void iosurface_justin_ptr(uint32_t sz, uint64_t ptr, uint64_t ios, uint64_t leak_ptr);
 void yeet_ios(void);
