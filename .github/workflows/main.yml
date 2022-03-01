@@ -33,7 +33,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           ls
-          xrun -sdk iphoneos gcc 
+          xrun -sdk iphoneos gcc desc_race.c spray_stuff.c -o poc -Wall -arch arm64
           ls
           
           
@@ -41,5 +41,4 @@ jobs:
         uses: actions/upload-artifact@v2.3.1
         with:
           path: |
-            brix.bin
-            button_helper.bin
+            poc
