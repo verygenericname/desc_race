@@ -5,6 +5,7 @@
 
 #ifndef iokit_h
 #define iokit_h
+#define kOSSerializeBinarySignature "\323\0\0"
 
 #include <stdint.h>
 #include <mach/mach.h>
