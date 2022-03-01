@@ -39,7 +39,7 @@
 #include <mach/vm_types.h>
 #endif
 
-#include <IOKit/IOReturn.h>
+#include "IOReturn.h"
 
 #ifdef __cplusplus
 extern "C" {
