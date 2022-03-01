@@ -57,10 +57,10 @@ extern "C" {
  * Simple data types.
  */
 #include <stdbool.h>
-#include <libkern/OSTypes.h>
+#include "OSTypes.h"
 
 #if KERNEL
-#include <libkern/OSBase.h>
+#include "OSBase.h"
 #endif
 
 typedef UInt32		IOOptionBits;
